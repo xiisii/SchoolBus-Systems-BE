@@ -1,0 +1,45 @@
+.register-input {
+	font-size: large;
+	width: 50rem;
+}
+
+.register-header {
+	font-size: 3rem;
+	padding: 0.5rem;
+	font-weight: bold;
+	color: rgb(58, 115, 199);
+}
+
+.camera-button {
+	border: 0;
+	transform: translateY(-4rem);
+	background: #a7a4a4;
+	background-color: transparent;
+}
+
+.camera-button:hover {
+	color: white;
+}
+
+.camera-button--clear {
+	color: rgb(166, 172, 177);
+}
+
+.camera-button--clear:hover {
+	color: white;
+}
+
+.btn-upload {
+	border: 0;
+	background: #757575;
+	font-size: 1.5rem;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+	border-radius: 2px;
+	transition: 0.1s linear;
+}
+
+.btn-upload:hover {
+	background: #b9b5b5;
+	font-weight: bold;
+}

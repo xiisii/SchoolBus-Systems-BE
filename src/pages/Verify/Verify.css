@@ -1,0 +1,15 @@
+.verify-page.btn-verify {
+	border: 0;
+	background: rgb(71, 248, 124);
+	font-size: 2rem;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+	border-radius: 2px;
+	transition: 0.1s linear;
+}
+
+.verify-page.btn-verify:hover {
+	background: #2ee00a;
+	font-weight: bold;
+	color: white;
+}

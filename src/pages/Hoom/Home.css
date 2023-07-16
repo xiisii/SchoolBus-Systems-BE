@@ -1,0 +1,68 @@
+.home-page {
+	min-height: 100vh;
+}
+
+.app-header {
+	background-color: white;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	position: absolute;
+	top: 0;
+	padding: 1rem;
+	font-size: 5rem;
+	font-weight: bold;
+}
+
+.home-page__button {
+	font-size: 4rem;
+	border: none;
+	border-radius: 1rem;
+	transition: 0.1s linear;
+}
+
+.home-page__button.btn-register {
+	background: rgb(233, 250, 250);
+	border: 1px solid grey;
+	margin-bottom: 2rem;
+}
+
+.home-page__button.btn-register:hover {
+	background: rgb(188, 195, 196);
+	border: 1px solid rgb(93, 208, 223);
+	color: white;
+	font-weight: bold;
+}
+
+.home-page__button.btn-verify {
+	background: #8bf371;
+}
+
+.home-page__button.btn-verify:hover {
+	background: greenyellow;
+	color: #0687f0;
+	font-weight: bold;
+}
+
+.info-card {
+	width: 50%;
+}
+
+.info-card-top {
+	margin-bottom: 2rem;
+}
+
+.info-header {
+	gap: 1rem;
+}
+
+.info-header-text {
+	font-size: 2rem;
+	font-weight: 500;
+	color: rgb(33, 119, 199);
+	margin-top: 1rem;
+}
+
+.list-info li {
+	font-size: 2rem;
+}
