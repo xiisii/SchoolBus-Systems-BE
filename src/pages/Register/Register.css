@@ -1,3 +1,7 @@
+.register-page {
+	position: relative;
+}
+
 .register-input {
 	font-size: large;
 	width: 50rem;

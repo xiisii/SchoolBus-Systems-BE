@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import Webcam from 'react-webcam';
 import { Input } from 'reactstrap';
 import { putImageToEmployee } from '../../api';
@@ -49,16 +49,14 @@ function Upload() {
 	return (
 		<div className="d-flex justify-content-center flex-column align-items-center register-page">
 			<p className="register-header">REGISTER</p>
-			{!imageSrc && (
-				<div className="d-flex flex-column justify-content-center align-items-center">
-					<Webcam ref={webcamRef} screenshotFormat="image/jpeg" />
-					<button className="camera-button" onClick={capture}>
-						<i className="fa-solid fa-camera" style={{ fontSize: 30 }}></i>
-					</button>
-				</div>
-			)}
+			<div className="d-flex flex-column justify-content-center align-items-center">
+				<Webcam ref={webcamRef} screenshotFormat="image/jpeg" />
+				<button className="camera-button" onClick={capture}>
+					<i className="fa-solid fa-camera" style={{ fontSize: 30 }}></i>
+				</button>
+			</div>
 			{imageSrc && (
-				<div className="d-flex flex-column justify-content-center align-items-center">
+				<div className="d-flex flex-column justify-content-center align-items-center position-absolute">
 					<img className="camera-center" src={imageSrc} />
 					<button
 						className="camera-button camera-button--clear"
