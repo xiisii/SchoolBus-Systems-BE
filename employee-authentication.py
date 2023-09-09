@@ -18,14 +18,17 @@ def lambda_handler(event, context):
         CollectionId='employees',
         Image={'Bytes': image_bytes}
     )
+    print(response)
 
     for match in response['FaceMatches']:
-        print(match['Face']['FaceId'], match['Face']['Confidence'])
+        if (match['Similarity'] < 99.999):
+            continue
         face = employeeTable.get_item(
             Key={
                 'rekognitionId': match['Face']['FaceId']
             }
         )
+        print(face)
         if 'Item' in face:
             print('Person Found: ', face['Item'])
             return buildResponse(200, {
