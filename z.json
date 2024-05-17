@@ -1,0 +1,13 @@
+{
+  "Message": "Success",
+  "FaceList": [
+    {
+      "employeeId": "mark123",
+      "confidence": 99.99883270263672
+    },
+    {
+      "employeeId": "oong123",
+      "confidence": 98.99883270263672
+    }
+  ]
+}

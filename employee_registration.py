@@ -2,7 +2,7 @@ import boto3
 
 s3 = boto3.client('s3')
 rekognition = boto3.client('rekognition', region_name='us-east-1')
-dynamodbTableName = 'employee'
+dynamodbTableName = 'employees'
 dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
 employeeTable = dynamodb.Table(dynamodbTableName)
 
@@ -18,11 +18,9 @@ def lambda_handler(event, context):
         if response['ResponseMetadata']['HTTPStatusCode'] == 200:
             faceId = response['FaceRecords'][0]['Face']['FaceId']
             name = key.split('.')[0].split('_')
-            # name format: full_name_uuid
-            # parse to fullname: full name
-            ele = name.pop()
-            fullname = ' '.join(name)
-            register_employee(faceId, fullname)
+            # name format: employeeId_uuid
+            employeeId = name[0]
+            register_employee(faceId, employeeId)
         return response
     except Exception as e:
         print(e)
@@ -43,10 +41,10 @@ def index_employee_image(bucket, key):
     return response
 
 
-def register_employee(faceId, fullname):
+def register_employee(faceId, employeeId):
     employeeTable.put_item(
         Item={
             'rekognitionId': faceId,
-            'fullname': fullname
+            'employeeId': employeeId
         }
     )
